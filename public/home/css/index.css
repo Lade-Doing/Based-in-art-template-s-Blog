@@ -1,0 +1,81 @@
+/* 文章列表开始 */
+.list {
+	overflow: hidden;	
+	padding:20px
+}
+
+.list li {
+	overflow:hidden;
+	width: 530px;
+	height: 430px;
+	background: #FFF;
+	margin-top: 30px;
+	border-radius:10px;
+	box-shadow: 5px 5px 5px #e1e1e1;
+}
+.list li:hover{
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+}
+
+.list .thumbnail, 
+.list .thumbnail img {
+	display: block;
+	width: 530px;
+	height: 240px;
+}
+
+.list .content {
+	padding: 16px 20px 0;
+}
+
+.list .brief {
+	font-size: 14px;
+	line-height: 24px;
+	margin-top: 20px;
+}
+
+/* 文章列表结束 */
+
+/* 分页开始 */
+.page {
+	padding: 30px 0;
+	font-size: 0;
+	text-align: center;
+}
+
+.page a {
+	display: inline-block;
+	font-size: 14px;
+	margin: 0 8px;
+}
+
+.page .active {
+	color: #ff7300;
+}
+
+/* 按钮样式 */
+.choose {
+	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	background-color: #ccc;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  
+  /* 鼠标悬停时的样式 */
+  .choose:hover,.actived{
+	background-color: #409EFF;
+	color: #fff;
+  }
+  
+  /* 鼠标按下时的样式 */
+  .choose:active {
+	background-color: #3A8EE6;
+  }
+  
+/* 分页结束 */

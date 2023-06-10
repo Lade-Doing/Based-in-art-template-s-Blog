@@ -1,0 +1,62 @@
+{{extend './common/layout.art'}}
+    {{block 'link'}}
+    <style>
+    .login-body{
+        background-image:url('/home/images/background.png');
+        background-size:cover;
+    }
+    .login{
+        border-radius:10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .btn-primary {
+        width: 100%;
+        background-color: #007bff;
+        border-color: #007bff;
+        transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+    </style>
+    {{/block}}
+    {{ block 'main'}}
+    <div class="login-body">
+        <div class="login-container">
+            <h4 class="title" style="color:white;">博客管理系统登录</h4>
+            <div class="login">
+                <form action="/admin/login" method="post" id="loginForm">
+                    <div class="form-group">
+                        <label>邮件</label>
+                        <input name="email" type="email" class="form-control" placeholder="请输入邮件地址">
+                    </div>
+                    <div class="form-group">
+                        <label>密码</label>
+                        <input name="password" type="password" class="form-control" placeholder="请输入密码">
+                    </div>
+                    <button type="submit" class="btn btn-primary">登录</button>
+                </form>
+            </div>
+            <div class="tips"></div>
+        </div>
+    </div>
+    {{/block}}
+    {{block 'script'}}
+        <script type = "text/javascript">
+            //为表单添加提交事件
+            $('#loginForm').on('submit',function (){
+                var result = serializeToJson($(this))
+                if(result.email.trim().length === 0){
+                    alert('请输入邮箱地址')
+                    return false
+                }
+                if(result.password.trim().length === 0){
+                    alert('请输入账号密码')
+                    return false
+                }
+            })
+        </script>
+    {{/block}}
+
